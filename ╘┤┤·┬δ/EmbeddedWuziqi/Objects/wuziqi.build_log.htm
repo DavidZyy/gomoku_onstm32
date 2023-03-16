@@ -1,0 +1,253 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: z yy, hzdz, LIC=21E4T-RXZ8J-EV91R-KV20D-HRE79-CXXG5
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.36.0.0
+Toolchain Path:  D:\Program Files\mdk5\core\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.40.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\Softwarefiles\keil\EmbeddedWuziqi\wuziqi.uvprojx
+Project File Date:  12/13/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'D:\Program Files\mdk5\core\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+User/main.c(1): warning: In file included from...
+./STM32Lib/CMSIS/Device/ST/STM32F2xx/Include\stm32f2xx.h(243): warning: In file included from...
+./STM32Lib/CMSIS/Include\core_cm3.h(122): warning: In file included from...
+./STM32Lib/CMSIS/Include/core_cmInstr.h(385): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
+  return(result);
+  ~~~~~~ ^~~~~~
+User/main.c(1): warning: In file included from...
+./STM32Lib/CMSIS/Device/ST/STM32F2xx/Include\stm32f2xx.h(243): warning: In file included from...
+./STM32Lib/CMSIS/Include\core_cm3.h(1108): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+User/main.c(2): warning: In file included from...
+./User/usart.h(15): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+u8 IsCompleteReceive();
+                    ^
+                     void
+User/main.c(8): warning: In file included from...
+./User/GUI.h(28): warning: 'LCD_RGB_888' is not defined, evaluates to 0 [-Wundef]
+#if LCD_RGB_888
+    ^
+User/main.c(10): warning: no previous extern declaration for non-static variable 'height' [-Wmissing-variable-declarations]
+u8 height = 8;
+   ^
+User/main.c(10): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+u8 height = 8;
+^
+./User/chess.h(6): note: expanded from macro 'u8'
+#define u8 uint8_t
+           ^
+User/main.c(11): warning: no previous extern declaration for non-static variable 'width' [-Wmissing-variable-declarations]
+u8 width = 8;
+   ^
+User/main.c(11): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+u8 width = 8;
+^
+./User/chess.h(6): note: expanded from macro 'u8'
+#define u8 uint8_t
+           ^
+User/main.c(19): warning: no previous extern declaration for non-static variable 'x_data' [-Wmissing-variable-declarations]
+        uint16_t x_data = 0,y_data = 0;
+                 ^
+User/main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        uint16_t x_data = 0,y_data = 0;
+        ^
+User/main.c(19): warning: no previous extern declaration for non-static variable 'y_data' [-Wmissing-variable-declarations]
+        uint16_t x_data = 0,y_data = 0;
+                            ^
+User/main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        uint16_t x_data = 0,y_data = 0;
+        ^
+User/main.c(20): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char iChessPos[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};//<BA><DA>1<A3><AC><B0><D7>2
+                              ^~~~~~~~~
+                              {        }
+User/main.c(20): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char iChessPos[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};//<BA><DA>1<A3><AC><B0><D7>2
+                                        ^~~~~~~~~
+                                        {        }
+User/main.c(20): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char iChessPos[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};//<BA><DA>1<A3><AC><B0><D7>2
+                                                  ^~~~~~~~~
+                                                  {        }
+User/main.c(20): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char iChessPos[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};//<BA><DA>1<A3><AC><B0><D7>2
+                                                            ^~~~~~~~~
+                                                            {        }
+User/main.c(20): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char iChessPos[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};//<BA><DA>1<A3><AC><B0><D7>2
+                                                                      ^~~~~~~~~
+                                                                      {        }
+User/main.c(21): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                         ^~~~~~~~~
+                         {        }
+User/main.c(21): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                   ^~~~~~~~~
+                                   {        }
+User/main.c(21): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                             ^~~~~~~~~
+                                             {        }
+User/main.c(21): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                                       ^~~~~~~~~
+                                                       {        }
+User/main.c(21): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                                                 ^~~~~~~~~
+                                                                 {        }
+User/main.c(22): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info_new[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                             ^~~~~~~~~
+                             {        }
+User/main.c(22): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info_new[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                       ^~~~~~~~~
+                                       {        }
+User/main.c(22): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info_new[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                                 ^~~~~~~~~
+                                                 {        }
+User/main.c(22): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info_new[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                                           ^~~~~~~~~
+                                                           {        }
+User/main.c(22): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        char Info_new[5][5]={1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2};
+                                                                     ^~~~~~~~~
+                                                                     {        }
+User/main.c(26): warning: no previous extern declaration for non-static variable 'del_click_x' [-Wmissing-variable-declarations]
+        int del_click_x=-1,del_click_y=-1;
+            ^
+User/main.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        int del_click_x=-1,del_click_y=-1;
+        ^
+User/main.c(26): warning: no previous extern declaration for non-static variable 'del_click_y' [-Wmissing-variable-declarations]
+        int del_click_x=-1,del_click_y=-1;
+                           ^
+User/main.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        int del_click_x=-1,del_click_y=-1;
+        ^
+User/main.c(7): warning: In file included from...
+./User/chess.h(40): warning: padding size of 'struct stCheckerBoardPos_t' with 1 byte to alignment boundary [-Wpadded]
+typedef struct stCheckerBoardPos_t{
+               ^
+User/main.c(68): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        CheckerBoardPos[i][j].chess_x = 12 + j*24;
+                                                      ~ ~~~^~~~~~
+User/main.c(69): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        CheckerBoardPos[i][j].chess_y = 12 + i*24;
+                                                      ~ ~~~^~~~~~
+User/main.c(65): warning: no previous prototype for function 'InitCheckerBoardCoordinate' [-Wmissing-prototypes]
+void InitCheckerBoardCoordinate(){
+     ^
+User/main.c(65): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void InitCheckerBoardCoordinate(){
+^
+static 
+User/main.c(65): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void InitCheckerBoardCoordinate(){
+                               ^
+User/main.c(78): warning: no previous prototype for function 'PrintMesgToLCD' [-Wmissing-prototypes]
+void PrintMesgToLCD(const char *Mesg, u16 begin_x, u16 begin_y, u8 size){
+     ^
+User/main.c(78): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void PrintMesgToLCD(const char *Mesg, u16 begin_x, u16 begin_y, u8 size){
+^
+static 
+User/main.c(97): warning: no previous prototype for function 'CalibtateScreen' [-Wmissing-prototypes]
+void CalibtateScreen(){
+     ^
+User/main.c(97): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void CalibtateScreen(){
+^
+static 
+User/main.c(97): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void CalibtateScreen(){
+                    ^
+User/main.c(115): warning: no previous prototype for function 'Status_1' [-Wmissing-prototypes]
+void Status_1(){
+     ^
+User/main.c(115): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Status_1(){
+^
+static 
+User/main.c(115): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void Status_1(){
+             ^
+User/main.c(120): warning: no previous prototype for function 'Status_2' [-Wmissing-prototypes]
+void Status_2(){
+     ^
+User/main.c(120): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Status_2(){
+^
+static 
+User/main.c(120): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void Status_2(){
+             ^
+User/main.c(96): warning: no previous extern declaration for non-static variable 'x_fac' [-Wmissing-variable-declarations]
+int x_fac, x_off, y_fac, y_off;
+    ^
+User/main.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int x_fac, x_off, y_fac, y_off;
+^
+User/main.c(96): warning: no previous extern declaration for non-static variable 'x_off' [-Wmissing-variable-declarations]
+int x_fac, x_off, y_fac, y_off;
+           ^
+User/main.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int x_fac, x_off, y_fac, y_off;
+^
+User/main.c(96): warning: no previous extern declaration for non-static variable 'y_fac' [-Wmissing-variable-declarations]
+int x_fac, x_off, y_fac, y_off;
+                  ^
+User/main.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int x_fac, x_off, y_fac, y_off;
+^
+User/main.c(96): warning: no previous extern declaration for non-static variable 'y_off' [-Wmissing-variable-declarations]
+int x_fac, x_off, y_fac, y_off;
+                         ^
+User/main.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int x_fac, x_off, y_fac, y_off;
+^
+41 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=6900 RO-data=6500 RW-data=0 ZI-data=2840  
+".\Objects\wuziqi.axf" - 0 Error(s), 41 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F2xx_DFP.2.9.0.pack
+                Keil.STM32F2xx_DFP.2.9.0
+                STMicroelectronics STM32F2 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  D:\Program Files\mdk5\pack\Keil\STM32F2xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F2xx\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
