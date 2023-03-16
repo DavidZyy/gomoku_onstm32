@@ -13,15 +13,15 @@ void LCDInit()
 	/* Enable FSMC clock */
 	RCC_AHB3PeriphClockCmd(RCC_AHB3Periph_FSMC, ENABLE); 
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;				 //PC0 推挽输出 
- 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		 //推挽输出
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;				 //PC0 ??????? 
+ 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		 //???????
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
  	GPIO_Init(GPIOD, &GPIO_InitStructure);
 	GPIO_SetBits (GPIOD,GPIO_Pin_12);
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;				 //PC0 推挽输出 背光
- 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		 //推挽输出
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;				 //PC0 ??????? ????
+ 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 		 //???????
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
  	GPIO_Init(GPIOC, &GPIO_InitStructure);
@@ -194,26 +194,26 @@ void LCDInit()
 	LCD_IO_WriteReg(0x29); //display on
 }
 
-/***********************************写指令函数*************************************/
+/***********************************д?????*************************************/
 void LCD_IO_WriteReg(uint8_t Reg) 
 {
   /* Write 16-bit Index, then Write Reg */
    *(__IO uint16_t *)FSMC_LCD_REG = Reg;
 }
 
-/***********************************写数据函数*************************************/
+/***********************************д???????*************************************/
 void LCD_IO_WriteData(uint16_t Data) 
 {
   /* Write 16-bit Reg */
   *(__IO uint16_t *)FSMC_LCD_DATA = Data;
 }
-/***********************************读数据函数*************************************/
+/***********************************?????????*************************************/
 uint16_t LCD_IO_ReadData(void)
 {
 	return ( * ( __IO uint16_t * ) ( FSMC_LCD_DATA ) );
 }
 
-/***********************************设置光标函数*************************************/
+/***********************************???ù????*************************************/
 void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
 {
 	LCD_IO_WriteReg(0x2A);
@@ -225,7 +225,7 @@ void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
 	LCD_IO_WriteData(Ypos&0XFF);
 }
 
-/***********************************打点函数*************************************/
+/***********************************?????*************************************/
 void LCD_DrawPoint(u16 x,u16 y,uint16_t GRB)
 {
         LCD_SetCursor(x,y);
@@ -233,7 +233,7 @@ void LCD_DrawPoint(u16 x,u16 y,uint16_t GRB)
 			 	LCD_IO_WriteData(GRB);
 }
 
-/***********************************全屏变色函数*************************************/
+/***********************************??????????*************************************/
 void LCD_ColourFillScreen(uint16_t GRB)
 {
 	uint16_t height,width;
@@ -249,7 +249,7 @@ void LCD_ColourFillScreen(uint16_t GRB)
 	}	
 }
 
-/***********************************直线(矩形)函数*************************************/
+/***********************************???(????)????*************************************/
 void LCD_DrawLine(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t GRB)
 {  
 	uint16_t height,width;
@@ -295,7 +295,7 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,uint16_t GRB)
 }
 
 
-//棋盘初始化
+//????????
 
 /*void LCD_InitCheckerBoard()
 {	
@@ -303,28 +303,28 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,uint16_t GRB)
 	
 	
 
-	//X轴
+	//X??
 	LCD_DrawLine(15,100,16,300,BLACK);
 	LCD_DrawLine(66,100,67,300,BLACK);
 	LCD_DrawLine(117,100,118,300,BLACK);
 	LCD_DrawLine(168,100,169,300,BLACK);
 	LCD_DrawLine(219,100,220,300,BLACK);
 
-	//Y轴
+	//Y??
 	LCD_DrawLine(15,100,220,101,BLACK);
 	LCD_DrawLine(15,150,220,151,BLACK);
 	LCD_DrawLine(15,200,220,201,BLACK);
 	LCD_DrawLine(15,250,220,251,BLACK);
 	LCD_DrawLine(15,300,220,301,BLACK);
 
-	//黑子
+	//????
 	LCD_DrawChess(15,100,BLACK);
 	LCD_DrawChess(15,150,BLACK);
 	LCD_DrawChess(15,200,BLACK);
 	LCD_DrawChess(15,250,BLACK);
 	LCD_DrawChess(15,300,BLACK);
 
-	//白子
+	//????
 	LCD_DrawChess(219,100,WHITE);
 	LCD_DrawChess(219,150,WHITE);
 	LCD_DrawChess(219,200,WHITE);
@@ -336,7 +336,7 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,uint16_t GRB)
 
 
 /**********************my code***********************/
-//棋盘初始化
+//????????
 extern height;
 extern width;
 void LCD_InitCheckerBoard()
@@ -367,12 +367,12 @@ void LCD_InitCheckerBoard()
 
 
 
-//棋子
+//????
 void LCD_DrawChess(uint16_t Xpos,uint16_t Ypos,uint16_t GRB)
 {
-	uint16_t Radius=10;//设置半径为10
+	uint16_t Radius=10;//??????10
 	uint16_t x,y,r=Radius;
-	for(y=Ypos - r;y<Ypos +r;y++)//画圆
+	for(y=Ypos - r;y<Ypos +r;y++)//???
 	{
 		for(x=Xpos - r;x<Xpos+r;x++)
 		{
@@ -381,7 +381,7 @@ void LCD_DrawChess(uint16_t Xpos,uint16_t Ypos,uint16_t GRB)
 	}
 }
 
-//画矩形边框
+//?????α??
 void LCD_DrawRectangle(uint16_t Xpos,uint16_t Ypos,uint16_t GRB)
 {
 	LCD_DrawLine(Xpos-10,Ypos-10,Xpos+10,Ypos-10,GRB);

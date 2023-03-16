@@ -58,7 +58,7 @@ void TouchChess(void)
 	 for(int i=0;i<5;i++)
 		   for(int j=0;j<5&&flag==0&&iWinner==0;j++)
 			   {
-					 //Èç¹û´¥ÃþÎ»ÖÃÔÚÄ³¸öÆåÅÌÎ»ÖÃµÄ·¶Î§ÄÚ
+					 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ÃµÄ·ï¿½Î§ï¿½ï¿½
 					 if(x_data>=(chessscreenpos[i][j].x-200) && x_data<=(chessscreenpos[i][j].x+200))
 						 if(y_data>=(chessscreenpos[i][j].y-100) && y_data<=(chessscreenpos[i][j].y+100))
 						 {
@@ -72,7 +72,7 @@ void TouchChess(void)
 								 }
 								 //draw a rectangle around the chess to imply the chess is chosen
 								 LCD_DrawRectangle(chesspos[i][j].x,chesspos[i][j].y,BLACK);
-								 if(click_x!=-1&&click_y!=-1)//ËùÑ¡Æå×Ó·¢Éú±ä»¯choose another chess
+								 if(click_x!=-1&&click_y!=-1)//ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½ï¿½ä»¯choose another chess
 								 {
 									 RepairChessboard(click_x,click_y);
 									 if(iChessPos[click_x][click_y]==1)
@@ -107,17 +107,17 @@ void TouchChess(void)
 				 }
 }
 
-//»ù±¾¹æÔòÅÐ¶Ï£¨ºÚÏÈÐÐ£¬ºÚ°×¸÷Ò»²½£©
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½Ú°×¸ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 int Judge_Rule1(int x,int y)
 {
-	if(x_last==-1&&y_last==-1) //Èôx_last,y_lastÎª³õÖµ£¬ÔòÎªºÚ×ÓÐÐ
+	if(x_last==-1&&y_last==-1) //ï¿½ï¿½x_last,y_lastÎªï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		if(iChessPos[x][y]==1)
 			return 1;
 		else
 			return 0;
 	}
-	else//Èô²»Îª³õÖµ£¬Ôò¸ù¾Ýx_last,y_last¼´ÉÏ´ÎÒÆ¶¯µÄ×ÓµÄÑÕÉ«ÅÐ¶ÏºÚ×ÓÐÐ»ò°××ÓÐÐ
+	else//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½x_last,y_lastï¿½ï¿½ï¿½Ï´ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½É«ï¿½Ð¶Ïºï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		if(iChessPos[x][y]!=iChessPos[x_last][y_last])
 			return 1;
@@ -126,7 +126,7 @@ int Judge_Rule1(int x,int y)
 	}
 }
 
-//¶þ³ÔÒ»¹æÔòÅÐ¶¨
+//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 void Judge_Rule2_Computer()
 {
 	for(int i=0;i<5;i++)
@@ -283,7 +283,7 @@ void TouchChess_VS_Computer(void)
 							 if(iChessPos[i][j]==1)
 							 { 
 								 LCD_DrawRectangle(chesspos[i][j].x,chesspos[i][j].y,BLACK);
-								 if(click_x!=-1&&click_y!=-1)//ËùÑ¡Æå×Ó·¢Éú±ä»¯
+								 if(click_x!=-1&&click_y!=-1)//ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½ï¿½ä»¯
 								 {
 									 RepairChessboard(click_x,click_y);
 									 if(iChessPos[click_x][click_y]==1)
@@ -322,18 +322,18 @@ void TouchChess_VS_Computer(void)
 void VSComputer(void)
 {
 	TouchChess_VS_Computer();
-	if(usart_1_rvfinish==1)//Èç¹ûÓÐÐÅºÅ·¢¹ýÀ´
+	if(usart_1_rvfinish==1)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ·ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
-				//Èç¹ûÊÇ¿ªÊ¼ÐÅºÅ
+				//ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Ê¼ï¿½Åºï¿½
 				if(usart_1_rx_data[0]=='S')
 				{
 						TouchChess_VS_Computer();
 					  usart_sendArray(USART1,iChessPos,5,5);
 				}
-				//Èç¹ûÊÇµçÄÔ×ßÆåµÄÐÅºÅ
+				//ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½
 				else
 				{
-					// ¸üÐÂInfoÐÅÏ¢£¨µ±·¢ËÍÀ´µÄÐÅÏ¢¸üÐÂµÄÊ±ºò£©
+					// ï¿½ï¿½ï¿½ï¿½Infoï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Âµï¿½Ê±ï¿½ï¿½
 					for(int j=0;j<25;)
 					{
 						for(int i=0;i<usart_1_rxlen;i++)
@@ -352,12 +352,12 @@ void VSComputer(void)
 					}
 					
 					
-					// ÅÐ¶ÏÊÇÄÄ¸öÆå×Ó¸Ä±äÁËÎ»ÖÃ
+					// ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ó¸Ä±ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 					for(int i=0;i<5;i++)
 					{
 						for(int j=0;j<5;j++)
 						{
-							if(iChessPos[i][j]-Info[i][j]!=0) //Î»ÖÃ¸Ä±äÁË
+							if(iChessPos[i][j]-Info[i][j]!=0) //Î»ï¿½Ã¸Ä±ï¿½ï¿½ï¿½
 							{
 								iChessPos[i][j]=Info[i][j];
 								if(iChessPos[i][j]==0)
@@ -396,7 +396,7 @@ void VSComputer(void)
 		
 }
 
-//¶þ³ÔÒ»¹æÔòÅÐ¶¨
+//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 void Judge_Rule2()
 {
 	for(int i=0;i<5;i++)
@@ -663,7 +663,7 @@ void Judge_Rule2()
 		}
 }
 
-//Ê¤¸ºÅÐ¶¨
+//Ê¤ï¿½ï¿½ï¿½Ð¶ï¿½
 void Winner()
 {
 	int black_num=0;
@@ -688,13 +688,13 @@ void Winner()
 	}
 }
 
-//Ê¤·½
+//Ê¤ï¿½ï¿½
 void Print_Win(uint16_t GRB)
 {
 	LCD_DrawChess(120,50,GRB);
 
 }
-//ÐÞ¸´ÆåÅÌ
+//ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 void RepairChessboard(int x,int y)
 {
 	LCD_DrawRectangle(chesspos[x][y].x,chesspos[x][y].y,YELLOW);
@@ -719,7 +719,7 @@ void RepairChessboard(int x,int y)
 	}
 }	
 
-/***********************************ÖÐ¶Ïº¯Êý*************************************/
+/***********************************ï¿½Ð¶Ïºï¿½ï¿½ï¿½*************************************/
 void EXTI2_IRQHandler (void)
 {
 	if(EXTI_GetITStatus(EXTI_Line2) != RESET)
